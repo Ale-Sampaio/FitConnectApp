@@ -3,13 +3,13 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { StatusBar } from "react-native";
 
-import LoginScreen from "./src/pages/login";
-import WelcomeScreen from "./src/pages/welcome";
-import CadastroScreen from "./src/pages/cadastro";
-import ConfigPerfilScreen from "./src/pages/ConfiguracaoPerfil";
-import MetaScreen from "./src/pages/meta";
-import FeedScreen from "./src/pages/feed";
-import PerfilScreen from "./src/pages/Perfil";
+import LoginScreen from "./src/views/login";
+import WelcomeScreen from "./src/views/welcome";
+import CadastroScreen from "./src/views/cadastro";
+import ConfigPerfilScreen from "./src/views/ConfiguracaoPerfil";
+import MetaScreen from "./src/views/meta";
+import FeedScreen from "./src/views/feed";
+import PerfilScreen from "./src/views/Perfil";
 
 const Stack = createStackNavigator();
 
