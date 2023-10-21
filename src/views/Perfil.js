@@ -9,7 +9,7 @@ import ContentProfileTab from "../components/PerfilUserComponents/contentProfile
 export default function Perfil() {
   return (
     <View style={styles.container}>
-      <UserInfos />
+      <UserInfos /> 
       <DadosCorporais />
       <Hidratacao />
       <ContentProfileTab />
