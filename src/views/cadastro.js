@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
   successText: {
     marginTop: 10,
     fontFamily: "Poppins-Medium",
-    fontSize: 14,
+    fontSize: 15,
     textAlign: "center",
   },
 });
