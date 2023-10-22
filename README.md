@@ -28,12 +28,11 @@ Como Mandar o repositorio para o remoto:
 1. git init
 2. git remote add origin https://github.com/HyP3rZer4/FitConnectApp.git
 3. git add *
-1. git commit -m "Sua mensagem de commit aqui"
-3. Crie uma Nova Branch: git branch nome_da_sua_branch
-2. Mude para a Nova Branch: git checkout nome_da_sua_branch
+4. git commit -m "Sua mensagem de commit aqui"
+5. Crie uma Nova Branch: git branch nome_da_sua_branch
+6. Mude para a Nova Branch: git checkout nome_da_sua_branch
 
-Como commitar:
-2. git push origin nome_da_sua_branch
+7. git push origin nome_da_sua_branch
 
 # Configuração do Projeto
 
