@@ -100,7 +100,7 @@ export default function Login() {
             onBlur={() => {
               if (senha && !validarSenha()) {
                 setSenhaError(
-                  "Senha inválida. Deve ter pelo menos 6 caracteres."
+                  "Senha inválida. Deve ter pelo menos 3 caracteres."
                 );
               } else {
                 setSenhaError(null);
