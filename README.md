@@ -36,19 +36,14 @@ Como Mandar o repositorio para o remoto:
 
 # Configuração do Projeto
 
-## Expo CLI
-Para instalar o Expo CLI globalmente, execute o seguinte comando:
-
-npm install -g expo-cli
-
-#MySQL Workbench
+## MySQL Workbench
 Crie um banco de dados chamado "db_usuario" no MySQL Workbench.
 CREATE DATABASE db_usuario;
 
 Para deletar os dados de uma tabela, utilize o comando:
 TRUNCATE TABLE usuario;
 
-#Sequelize ORM
+## Sequelize ORM
 Instale o Sequelize ORM no seu projeto com os seguintes comandos:
 npm install --save sequelize
 npm install --save-dev sequelize-cli
@@ -66,24 +61,24 @@ Mudar o arquivo config/config.json e altere a senha para "sua_senha" e o nome do
 Crie um modelo no Sequelize com o seguinte comando (o nome do model deve estar em maiúsculas):
 npx sequelize-cli model:generate --name Usuario --attributes email:string,senha:string
 
-#Executar Migrações
+## Executar Migrações
 Para criar as tabelas no banco de dados, execute o seguinte comando:
 npx sequelize-cli db:migrate
 
 Se ocorrer um erro "ERROR: Please install mysql2 package manually", instale o pacote mysql2 manualmente com o comando:
 npm install mysql2
 
-#Configurar o Controlador
+## Configurar o Controlador
 Crie um arquivo chamado controller.js para se relacionar com o banco de dados.
 
-#Instalar Dependências para o Backend
+## Instalar Dependências para o Backend
 npm install express --save
 npm install body-parser
 npm install cors
 npm install -g nodemon
 
-#Iniciar o Backend
+## Iniciar o Backend
 nodemon controller.js
 
-#Configurar o Frontend
+## Configurar o Frontend
 Altere o http no arquivo cadastro de acordo com o IP do seu PC com a porta 3000
