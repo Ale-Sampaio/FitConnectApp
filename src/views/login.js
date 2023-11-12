@@ -45,7 +45,7 @@ export default function Login() {
     return null;
   }
 
-  const handleEntrarPress = () => {
+  const handleEntrarPress = async () => {
     if (!validarEmail()) {
       setEmailError("Email inválido");
     } else {
@@ -61,10 +61,34 @@ export default function Login() {
     // Verifica se ambos os campos são válidos
     if (validarEmail() && validarSenha()) {
       console.log("Dados válidos. Salvando...");
-      handleNavigateToConfiguraoPerfil();
-    } else {
-      console.log("Dados inválidos. Verifique o email e a senha.");
-    }
+      try {
+        const response = await fetch('http://192.168.0.10:3000/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: email,
+            senha: senha,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          console.log('Login bem-sucedido');
+          handleNavigateToConfiguraoPerfil();
+          // Redirecione ou realize alguma ação para indicar um login bem-sucedido
+        } else {
+          console.error('Erro durante o login:', data.error);
+          // Trate o erro de login aqui (exibindo uma mensagem de erro, etc.)
+        }
+
+      } catch (error) {
+        console.error('Erro durante a solicitação:', error);
+        // Trate outros erros de solicitação aqui
+      }
+    };
   };
 
   return (

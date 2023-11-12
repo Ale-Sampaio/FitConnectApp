@@ -51,12 +51,12 @@ export default function Cadastro() {
     if (isEmailValid && isSenhaValid) {
       console.log("Dados válidos. Salvando...");
       // Enviar dados para o servidor usando fetch
-      fetch('http://192.168.0.7:3000/cadastro', {
+      fetch('http://192.168.0.10:3000/cadastro', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, senha, confirmaSenha }),
+        body: JSON.stringify({ email, senha}),
       })
       .then(response => {
         if (!response.ok) {
