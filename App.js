@@ -8,8 +8,9 @@ import WelcomeScreen from "./src/views/welcome";
 import CadastroScreen from "./src/views/cadastro";
 import ConfigPerfilScreen from "./src/views/ConfiguracaoPerfil";
 import MetaScreen from "./src/views/meta";
-import FeedScreen from "./src/views/feed";
-import PerfilScreen from "./src/views/Perfil";
+import TreinoScreen from "./src/views/treino";
+import ListaTreinosScreen from "./src/views/listaTreinos";
+import FavoritosScreen from "./src/views/favoritos";
 
 const Stack = createStackNavigator();
 
@@ -44,13 +45,18 @@ const App = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Feed"
-          component={FeedScreen}
+          name="Treino"
+          component={TreinoScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Perfil"
-          component={PerfilScreen}
+          name="ListaTreino"
+          component={ListaTreinosScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Favoritos"
+          component={FavoritosScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

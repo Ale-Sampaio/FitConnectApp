@@ -1,19 +1,12 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
-import UserInfos from "../components/PerfilUserComponents/userInfos";
-import DadosCorporais from "../components/PerfilUserComponents/dadosCorporais";
-import Hidratacao from "../components/PerfilUserComponents/hidratacao";
-import TabBar from "../components/feedComponents/tabBar";
-import ContentProfileTab from "../components/PerfilUserComponents/contentProfileTab";
+import { View, StyleSheet, Text } from "react-native";
+
 
 export default function Perfil() {
   return (
     <View style={styles.container}>
-      <UserInfos /> 
-      <DadosCorporais />
-      <Hidratacao />
-      <ContentProfileTab />
-      <TabBar />
+      <Text style={styles.sectionTitle}>Dados Corporais</Text>
+      
     </View>
   );
 }
@@ -23,5 +16,17 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 70,
     backgroundColor: "white",
+  },
+  sectionTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    marginVertical: 10,
+    marginLeft: 15,
+  },
+  numPosts: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginTop: 15,
+    marginLeft: 25,
   },
 });

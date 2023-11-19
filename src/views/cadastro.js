@@ -51,7 +51,7 @@ export default function Cadastro() {
     if (isEmailValid && isSenhaValid) {
       console.log("Dados válidos. Salvando...");
       // Enviar dados para o servidor usando fetch
-      fetch('http://192.168.0.7:3000/cadastro', {
+      fetch('http://192.168.0.2:3000/cadastro', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ export default function Cadastro() {
         if (!response.ok) {
           throw new Error(`Erro na solicitação: ${response.status} - ${response.statusText}`);
         }
-        return response.json(); // Parse a resposta JSON
+        return response.json(); 
       })
       .then(data => {
         console.log("Resposta do servidor:", data.message);

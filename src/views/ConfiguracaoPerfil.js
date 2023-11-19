@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { useFonts } from "expo-font";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  TextInput,
-  StyleSheet,
-} from "react-native";
+import { View, Text, TouchableOpacity, TextInput, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { cinzaLow, rosaTurquesa } from "../assets/colors";
 
@@ -22,6 +16,7 @@ export default function ConfiguracaoPerfil() {
 
   const genderOptions = ["Masculino", "Feminino", "Outro"];
 
+  const [nome, setNome] = useState(null);
   const [idade, setIdade] = useState(null);
   const [altura, setAltura] = useState(null);
   const [peso, setPeso] = useState(null);
@@ -29,14 +24,15 @@ export default function ConfiguracaoPerfil() {
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleNavigateToMeta = () => {
-    if (!idade || !altura || !peso || !selectedGender) {
+    if (!nome || !idade || !altura || !peso || !selectedGender) {
       setErrorMessage("Preencha todos os campos antes de continuar.");
       return;
     }
 
     setErrorMessage("");
-    navigation.navigate("Meta");
+    navigation.navigate("Treino", { nome }); // Passa o nome como parâmetro
     console.log("Informações do perfil:");
+    console.log("Nome:", nome);
     console.log("Idade:", idade);
     console.log("Altura:", altura);
     console.log("Peso:", peso);
@@ -57,6 +53,15 @@ export default function ConfiguracaoPerfil() {
       </View>
 
       <View style={styles.inputTextContainer}>
+        <View style={styles.inputTextField}>
+          <Text style={styles.textInput}>Qual é o seu nome?</Text>
+          <TextInput
+            style={styles.inputField}
+            placeholder="ex: João"
+            returnKeyType="next"
+            onChangeText={(value) => setNome(value)}
+          />
+        </View>
         <View style={styles.inputTextField}>
           <Text style={styles.textInput}>Por favor, informe sua idade</Text>
           <TextInput

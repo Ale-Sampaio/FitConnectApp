@@ -62,7 +62,7 @@ export default function MetaScreen() {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          navigation.navigate("Feed");
+          navigation.navigate("Treino");
         }}
       >
         <Text style={styles.buttonText}>Continuar</Text>
