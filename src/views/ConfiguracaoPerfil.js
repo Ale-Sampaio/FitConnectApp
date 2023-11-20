@@ -23,10 +23,39 @@ export default function ConfiguracaoPerfil() {
   const [selectedGender, setSelectedGender] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleNavigateToMeta = () => {
+  const handleNavigateToMeta = async () => {
     if (!nome || !idade || !altura || !peso || !selectedGender) {
       setErrorMessage("Preencha todos os campos antes de continuar.");
       return;
+    }
+
+    try {
+      const response = await fetch('http://192.168.0.10:3000/ConfiguracaoPerfil', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nome,
+          idade,
+          altura,
+          peso,
+          genero: selectedGender,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        console.log('Dados do perfil cadastrados com sucesso!');
+        // Redirecione ou realize alguma ação após o cadastro bem-sucedido
+      } else {
+        console.error('Erro durante o cadastro do perfil:', data.message);
+        // Trate o erro de cadastro aqui
+      }
+    } catch (error) {
+      console.error('Erro durante a solicitação:', error);
+      // Trate outros erros de solicitação aqui
     }
 
     setErrorMessage("");

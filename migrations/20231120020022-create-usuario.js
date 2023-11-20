@@ -15,6 +15,21 @@ module.exports = {
       senha: {
         type: Sequelize.STRING
       },
+      nome: {
+        type: Sequelize.STRING
+      },
+      idade: {
+        type: Sequelize.INTEGER
+      },
+      altura: {
+        type: Sequelize.FLOAT
+      },
+      peso: {
+        type: Sequelize.FLOAT
+      },
+      genero: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -41,7 +41,8 @@ Crie um banco de dados chamado "db_usuario" no MySQL Workbench.
 CREATE DATABASE db_usuario;
 
 Para deletar os dados de uma tabela, utilize o comando:
-TRUNCATE TABLE usuario;
+TRUNCATE TABLE usuarios;
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root123'
 
 ## Sequelize ORM
 Instale o Sequelize ORM no seu projeto com os seguintes comandos:
@@ -59,7 +60,7 @@ Mudar o arquivo config/config.json e altere a senha para "sua_senha" e o nome do
 
 #Criar um Modelo no Sequelize
 Crie um modelo no Sequelize com o seguinte comando (o nome do model deve estar em maiúsculas):
-npx sequelize-cli model:generate --name Usuario --attributes email:string,senha:string
+npx sequelize-cli model:generate --name Usuario --attributes email:string,senha:string,nome:string,idade:integer,altura:float,peso:float,genero:string
 
 ## Executar Migrações
 Para criar as tabelas no banco de dados, execute o seguinte comando:
@@ -73,6 +74,7 @@ Crie um arquivo chamado controller.js para se relacionar com o banco de dados.
 
 ## Instalar Dependências para o Backend
 npm install express --save
+npm install express-session
 npm install body-parser
 npm install cors
 npm install -g nodemon
